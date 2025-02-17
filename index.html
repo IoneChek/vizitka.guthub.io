@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Грузоперевозки</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- Одна страница с фоном -->
+  <section class="hero">
+    <!-- Полупрозрачная подложка -->
+    <div class="hero-overlay"></div>
+
+    <!-- Основной контент -->
+    <div class="hero-content fade-in-down">
+      <!-- Логотип (по центру блока на ПК, но на мобильном сместим вправо) -->
+      <div class="logo-center">
+        <img src="images/logo.png" alt="Логотип">
+      </div>
+
+      <h1>Мы доставляем<br/>ваши грузы<br/>точно в срок</h1>
+      <p>Надежные перевозки по&nbsp;всей стране<br/>и&nbsp;за её пределами</p>
+
+      <!-- Ссылка на Telegram -->
+      <a href="https://t.me/your_channel" class="btn-cta" target="_blank">
+        Наш Telegram
+      </a>
+
+      <!-- Номер телефона ниже кнопки -->
+      <p class="phone">+7 (XXX) XXX-XX-XX</p>
+    </div>
+  </section>
+
+  <!-- Скрипт анимации (опционально) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeDown = document.querySelector('.fade-in-down');
+      if (fadeDown) {
+        fadeDown.style.opacity = 0;
+        fadeDown.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+          fadeDown.style.transition = '1.5s ease';
+          fadeDown.style.opacity = 1;
+          fadeDown.style.transform = 'translateY(0)';
+        }, 100);
+      }
+    });
+  </script>
+</body>
+</html>

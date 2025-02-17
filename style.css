@@ -1,0 +1,130 @@
+/* Сброс и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    /* Обязательно для адаптивности: */
+    /* <meta name="viewport" content="width=device-width, initial-scale=1.0"> в <head> */
+  }
+  
+  /* Главный блок с фоном */
+  .hero {
+    width: 100%;
+    height: 100vh; /* Изначально занимаем всю высоту окна */
+    background: url('qq.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Текст слева */
+    padding: 0 60px;
+  }
+  
+  /* Полупрозрачная подложка */
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Контейнер контента */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Текст слева */
+    max-width: 500px;
+  }
+  
+  /* Логоцентр (на десктопе центрируем лого относительно этого блока) */
+  .logo-center {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .logo-center img {
+    height: 80px;
+    width: auto;
+  }
+  
+  /* Заголовок */
+  .hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  }
+  
+  /* Подтекст */
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+  
+  /* Кнопка Telegram */
+  .btn-cta {
+    display: inline-block;
+    background: #ffd600;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: 0.3s;
+  }
+  .btn-cta:hover {
+    background: #ffb400;
+    transform: scale(1.05);
+  }
+  
+  /* Номер телефона */
+  .phone {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+  
+  /* ----- Адаптивный блок ----- */
+  @media (max-width: 768px) {
+    /* 1. Высота подстраивается под контент, если нужно */
+    /*    или оставляем 100vh, если хотим всегда полный экран. */
+    .hero {
+      /* Если хотим "ровно под экран телефона":
+         Оставляем height: 100vh; 
+         Если хотим под высоту контента, ставим height: auto; min-height: 100vh; */
+      height: 100vh;
+      padding: 0 20px;
+    }
+  
+    /* 2. Логотип правее */
+    .logo-center {
+      text-align: right; /* Логотип смещаем вправо */
+      margin-right: 10px; /* Небольшой отступ от края */
+      margin-bottom: 30px;
+    }
+    .logo-center img {
+      height: 60px; /* Можно уменьшить лого на мобильных */
+    }
+  
+    /* 3. Заголовок поменьше */
+    .hero-content h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+    .phone {
+      font-size: 18px;
+    }
+  }
